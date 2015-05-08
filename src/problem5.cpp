@@ -1,4 +1,5 @@
 #include <array>
+#include <numeric>
 #include <cstdio>
 
 enum Symbol {
@@ -10,7 +11,6 @@ enum Symbol {
 using Symbols = std::array<Symbol,8>;
 
 int evaluate( Symbols sym ) {
-	
 	std::array<int,9> values = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 	// combine nothings
@@ -39,10 +39,7 @@ int evaluate( Symbols sym ) {
 		}
 	}
 
-	int sum = 0;
-	for( auto x : values ) 
-		sum += x;
-	return sum;
+	return std::accumulate( values.begin(), values.end(), 0 );
 }
 
 bool next_combination( Symbols& sym ) {
@@ -63,10 +60,10 @@ void print( const Symbols& sym ) {
 	for(int i=0;i<8;++i) {
 		printf("%d",i+1);
 		switch( sym[i] ) {
-			case Plus:
+		case Plus:
 			printf(" + ");
 			break;
-			case Minus:
+		case Minus:
 			printf(" - ");
 			break;
 		}
@@ -76,10 +73,8 @@ void print( const Symbols& sym ) {
 
 int main() {
 	Symbols sym = {};
-	
 	do {
-		if( evaluate( sym ) == 100 ) {
+		if( evaluate( sym ) == 100 )
 			print( sym );
-		}
 	} while( next_combination( sym ) );
 }
