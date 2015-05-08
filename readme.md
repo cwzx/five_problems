@@ -11,8 +11,8 @@ Solutions in C++.
 * Brute force
 * Single-threaded
 * No dynamic allocation
-* 80 lines of code
-* Run time: ~9 ms
+* 77 lines of code
+* Run time: ~8.7 ms
 
 Output:
 ```cpp

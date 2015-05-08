@@ -1,5 +1,4 @@
 #include <array>
-#include <numeric>
 #include <cstdio>
 
 enum Symbol {
@@ -30,16 +29,14 @@ int evaluate( Symbols sym ) {
 			++i;
 		}
 	}
-
-	// convert subtraction to addition
+	int sum = values[0];
 	for(int i=0;i<8;++i) {
-		if( sym[i] == Minus ) {
-			values[i+1] = -values[i+1];
-			sym[i] = Plus;
-		}
+		if( sym[i] == Minus )
+			sum -= values[i+1];
+		else
+			sum += values[i+1];
 	}
-
-	return std::accumulate( values.begin(), values.end(), 0 );
+	return sum;
 }
 
 bool next_combination( Symbols& sym ) {
