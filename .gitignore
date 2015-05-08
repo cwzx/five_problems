@@ -6,6 +6,6 @@ bin/
 *.opensdf
 *.psess
 *.vsp
-build/*/five_problems/x64
-build/*/five_problems/Win32
+build/*/x64
+build/*/Win32
 
