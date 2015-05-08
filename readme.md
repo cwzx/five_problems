@@ -6,6 +6,8 @@ Solutions in C++.
 
 ## Problem 5
 
+[problem5.cpp](https://github.com/cwzx/five_problems/blob/master/src/problem5.cpp?ts=4)
+
 * Brute force
 * Single-threaded
 * No dynamic allocation
@@ -13,7 +15,6 @@ Solutions in C++.
 * Run time: ~8.7 ms
 
 Output:
-
 ```cpp
 123 - 45 - 67 + 89
 12 - 3 - 4 + 5 - 6 + 7 + 89
