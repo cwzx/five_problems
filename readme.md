@@ -37,6 +37,7 @@ Output:
 * Single-threaded
 * No dynamic allocation
 * No strings
+* Works in any base
 * Result must fit in a `uint64_t`
 * 45 lines of code
 * Run time: ~6.2 ms
