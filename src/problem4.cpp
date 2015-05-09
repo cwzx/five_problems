@@ -13,36 +13,34 @@ uint64_t mag( uint64_t x, uint64_t base ) {
 	return m;
 }
 
-// concatenates the digits of the numbers in seq in the given base
-template<typename Seq>
-uint64_t concat_digits( const Seq& seq, uint64_t base ) {
+// concatenates the digits of the numbers in the given base
+template<typename It>
+uint64_t concat_digits( It p1, It p2, uint64_t base = 10 ) {
 	uint64_t result = 0;
 	uint64_t m = 1;
-	for( auto x : seq ) {
+	for(;p1!=p2;++p1) {
+		auto x = *p1;
 		result += x * m;
 		m *= mag(x,base);
 	}
 	return result;
 }
 
-// brute force searches all permutations for the largest concat
-template<typename Seq>
-uint64_t largest_perm( Seq seq, uint64_t base ) {
-	uint64_t largest = 0;
-	do {
-		auto x = concat_digits( seq, base );
-		if( x > largest )
-			largest = x;
-	} while( std::next_permutation( seq.begin(), seq.end() ) );
-	return largest;
-}
-
 int main() {
 	std::array<int,4> values = { 505, 52, 1, 5059 };
-	
-	std::sort( values.begin(), values.end() );
-	
-	auto largest = largest_perm( values, 10 );
+	//std::array<int,13> values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+
+	auto comp = []( int x, int y ) {
+		int a[] = { x, y };
+		int b[] = { y, x };
+		auto c1 = concat_digits( a, a+2 );
+		auto c2 = concat_digits( b, b+2 );
+		return c1 > c2;
+	};
+
+	std::sort( values.begin(), values.end(), comp );
+
+	auto largest = concat_digits( values.begin(), values.end() );
 
 	printf("%llu\n",largest);
 }

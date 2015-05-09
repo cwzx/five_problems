@@ -33,15 +33,14 @@ Output:
 
 [problem4.cpp](https://github.com/cwzx/five_problems/blob/master/src/problem4.cpp?ts=4)
 
-* Brute force
+* `O(n log n)`
 * Single-threaded
 * No dynamic allocation
 * No strings
 * Works in any base
 * Result must fit in a `uint64_t`
 * 45 lines of code
-* Run time: ~6.2 ms (n = 4)
-* Run time: ~709 ms (n = 11)
+* Run time: ~6.2 ms
 
 Example:
 ```
