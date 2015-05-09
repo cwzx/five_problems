@@ -40,7 +40,8 @@ Output:
 * Works in any base
 * Result must fit in a `uint64_t`
 * 45 lines of code
-* Run time: ~6.2 ms
+* Run time: ~6.2 ms (n = 4)
+* Run time: ~709 ms (n = 11)
 
 Example:
 ```
