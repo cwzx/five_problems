@@ -29,3 +29,22 @@ Output:
 123 - 4 - 5 - 6 - 7 + 8 - 9
 ```
 
+## Problem 4
+
+[problem4.cpp](https://github.com/cwzx/five_problems/blob/master/src/problem4.cpp?ts=4)
+
+* Brute force
+* Single-threaded
+* No dynamic allocation
+* No strings
+* Result must fit in a uint64_t
+* 45 lines of code
+* Run time: ~6.2 ms
+
+Example:
+```
+{ 505, 52, 1, 5059 }
+
+5250595051
+```
+

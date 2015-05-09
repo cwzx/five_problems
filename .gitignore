@@ -6,6 +6,6 @@ bin/
 *.opensdf
 *.psess
 *.vsp
-build/*/x64
-build/*/Win32
+build/vs2015/*/x64
+build/vs2015/*/Win32
 
